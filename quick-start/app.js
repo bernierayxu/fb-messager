@@ -21,7 +21,9 @@
  */
 
 'use strict';
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+// const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = 'EAAVopEHJxLkBADijfUqyB0lWBRbPWotsA4Gx3E4mssc6ZC6DhEsPXOJKLl4T8zOSgrBNyAkakzmZBZAKdWlXkJ5K9ZBU5OMP51nlxuvu46YuxgFnOua0gzxVbGdZCWdIvcwpGUmFNfOVtZAm4Bpgq0cBrsN4IFjIZACPdqsgrzQbgZDZD';
+
 // Imports dependencies and set up http server
 const 
   request = require('request'),
@@ -30,7 +32,7 @@ const
   app = express().use(body_parser.json()); // creates express http server
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+app.listen(process.env.PORT || 3000, () => console.log('webhook is listening'));
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {  
@@ -76,7 +78,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
   
   /** UPDATE YOUR VERIFY TOKEN **/
-  const VERIFY_TOKEN = "<YOUR VERIFY TOKEN>";
+  const VERIFY_TOKEN = "random_demo_token_123";
   
   // Parse params from the webhook verification request
   let mode = req.query['hub.mode'];
